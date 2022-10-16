@@ -15,17 +15,10 @@ class CadastroScreen extends StatefulWidget {
 class _CadastroScreenState extends State<CadastroScreen> {
   TextEditingController _textController = TextEditingController();
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  TaskHelper _helper = TaskHelper();
 
   @override
   void initState() {
     super.initState();
-
-    _helper.getAll().then((data) {
-      setState(() {
-        if (data != null) _lista = data;
-      });
-    });
 
     if (widget.task != null) {
       setState(() {
