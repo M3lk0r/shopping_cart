@@ -1,7 +1,7 @@
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'task_helper.dart';
-import 'task.dart';
+import 'tarefa.dart';
 
 class DatabaseHelper {
   Database? _db;
@@ -23,7 +23,7 @@ class DatabaseHelper {
 
   Future<Database?> initDb() async {
     final databasePath = await getDatabasesPath();
-    final path = join(databasePath, taskDatabase.db);
+    final path = join(databasePath, "taskDatabase.db");
 
     try {
       return _db = await openDatabase(path,

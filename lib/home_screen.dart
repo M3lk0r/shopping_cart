@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     _helper.getAll().then((data) {
       setState(() {
-        if (data != null) _lista = data;
+        if (data != null) _tarefas = data;
       });
     });
   }
@@ -121,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Task? editedTask = await Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => CadastroScreen(tarefa: _item)));
+                          builder: (context) => CadastroScreen(task: _item)));
                   if (editedTask != null) {
                     setState(() {
                       _tarefas.removeAt(position);

@@ -18,7 +18,7 @@ class TaskHelper {
     Database? db = await DatabaseHelper().db;
     if (db != null) {
       task.id = await db.insert(tableName, Task.toMap());
-      return Task;
+      return task;
     }
     return null;
   }
